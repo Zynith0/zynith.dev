@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<nav class="bar">
+			<ul>
+				<div class="imageflex">
+					<img class="home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/">Home</a></li>
+					<img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="47px">
+					<li class="imageflexcontent"><a href="https://github.com/Zynith0">Github</a></li>
+					<img class="about" src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/AboutMe">About Me</a></li>
+					<img class="keyboard" src="https://cdn3.iconfinder.com/data/icons/computers-programming/512/Keyboard_A-512.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/Keyboards">Keyboards</a></li>
+					<img class="yt" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/black-and-white-youtube-icon.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/yt-mp3">Yt Downloader</a></li>
+				</div>
+			</ul>
+		</nav>
+		<div style="text-align: center;">
+			<h1 style="color: white; font-weight: 1000;" class="yt_header">⬇️Youtube Downloader</h1>
+		</div>
+		<div style="text-align: center;">
+			<img src="https://rosepinetheme.com/assets/logo-main.png" height="152" class="img"> 
+		</div>
+		<div style="text-align: center;">
+			<input id="url" type="url" class="url"></input>
+			<div style="text-align: center;">
+				<select class="audio-format" id="audio-format">
+					<option value="wav">wav</option>
+					<option value="mp3">mp3</option>
+					<option value="mp4">mp4</option>
+				</select>
+			</div>
+			<button onclick="getInputValue();" class="download" id="download">download</button>
+		</div>
+<html>
+
+<style>
+* {
+	font-family: IBM Plex Mono, monospace;
+	font-weight: 500;
+}
+
+body {
+	background-color: black;
+}
+
+.yt_header {
+	animation: enter 0.5s forwards;
+}
+
+.download {
+	color: white;
+	background-color: transparent;
+	border: solid #2D2F40;
+	border-radius: 8px;
+	position: relative;
+	left: 203px;
+	top: 459px;
+	transition: ease-in-out background-color 100ms;
+	animation: enter 0.7s forwards;
+}
+
+.download:hover {
+	background-color: #31748F;
+}
+
+.download:active {
+	color: black;
+	background-color: white;
+}
+
+.audio-format {
+	color: white;
+	background-color: transparent;
+	border: solid #2D2F40;
+	border-radius: 8px;
+	color: white;
+	position: relative;
+	left: -220px;
+	top: 485px;
+	animation: enter 0.7s forwards;
+}
+
+.audio-format:hover {
+	background-color: #31748F;
+}
+
+.audio-format:active {
+	color: black;
+}
+
+.url {
+	color: white;
+	background-color: transparent;
+	border: solid #2D2F40;
+	border-radius: 8px;
+	width: 480px;
+	position: relative;
+	top: 480px;
+	animation: enter 0.6s forwards;
+}
+
+.img {
+	position: relative;
+	top: 480px;
+	animation: enter 0.5s forwards;
+}
+</style>
+
+<script>
+function getInputValue() {
+	const myInput = document.getElementById('url');
+	const inputValue = myInput.value;
+	const form = document.getElementById('audio-format').value;
+	callMakeFile(inputValue, form);
+}
+
+let jsonObject;
+
+async function callMakeFile(url, format) {
+	const button = document.getElementById('download')
+	button.innerText = "downloading..."
+	const data = {
+		Url: url,
+		Format: format,
+	};
+	try {
+		const response = await fetch("http://localhost:8080/startDownload", {
+			method: "POST",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-type": "application/json",
+			},
+		});
+		if (!response.ok) {
+			throw new Error(`HTTP error!`)
+		}
+		// const blob = await response.blob();
+		// const jsonString = await blob.text();
+		// jsonObject = JSON.parse(jsonString)
+		window.open("http://localhost:8080/download");
+	} catch (error) {
+		console.error("Error fetching or processing blob: ", error);
+	}
+	button.innerText = "download"
+} 
+</script>
+
+<style>
+@keyframes enter {
+	0% {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+* {
+	font-family: 'Courier New'; 
+	font-weight: 500;
+	line-height: 125%;
+}
+
+body {
+	background-color: #1a1825;
+}
+
+.bar ul{
+	padding: 2px;
+	margin-top: 0px;
+	list-style-type: none;
+	background-color: #2D2F40;
+	overflow: hidden;
+}
+
+.bar a {
+	font-weight: 700;
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+.bar a:hover {
+	background-color: #1A1825;
+}
+
+.bar li {
+	float: left;
+}
+
+.imageflex {
+	display: flex;
+}
+
+.imageflexcontent {
+	margin-left: 6px;
+	margin-top: 0px;
+}
+
+.about {
+	margin-left: 21px;
+}
+
+.github {
+	margin-left: 21px;
+}
+
+.keyboard {
+	margin-left: 21px;
+}
+
+.yt {
+	margin-left: 21px;
+}
+</style>
+
+<script>
+</script>
