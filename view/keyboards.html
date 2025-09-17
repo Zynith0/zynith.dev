@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<nav class="bar">
+			<ul>
+				<div class="imageflex">
+					<img class="home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/">Home</a></li>
+					<img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="47px">
+					<li class="imageflexcontent"><a href="https://github.com/Zynith0">Github</a></li>
+					<img class="about" src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/AboutMe">About Me</a></li>
+					<img class="keyboard" src="https://cdn3.iconfinder.com/data/icons/computers-programming/512/Keyboard_A-512.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/Keyboards">Keyboards</a></li>
+				</div>
+			</ul>
+		</nav>
+		<div style="text-align: center;">
+			<h1 class="keyboard_header">
+				Keyboards
+			</h1>
+			<p class="keyboard_desc">
+				So, I am a complete keyboard nerd. This is pretty much just me talking about all the keyboards I own<br>
+				<br>
+				One of the first mechanical keyboards I remember owning was the<br>
+				HyperX Alloy Origins Core TKL with their blue switches
+			</p>
+			<img class="hyperx" src="https://ca.hyperx.com/cdn/shop/files/hyperx_alloy_origins_core_us_2_angled_left_renamed_1.jpg?v=1757638135" height="360px">
+			<p class="keyboard_desc">
+				After that one, I believe it was the SteelSeries Apex Pro TKL
+			</p>
+			<img class="apex" src="https://www.pcworld.com/wp-content/uploads/2025/06/DSC05885.jpg?quality=50&strip=all" height="360px">
+			<p class="keyboard_desc">
+				The Apex Pro TKL was unique, as it has Hall Effect switches<br>
+				It was the first (and last lol) Hall Effect keyboard I've owned<br>
+				<br>
+				Then I got the LeoBog Hi75
+			</p>
+			<img class="leobog" src="https://leobogtech.com/cdn/shop/articles/DSC08618.jpg?v=1701833918&width=1100" height="360px">
+			<p class="keyboard_desc">
+				This was my first custom keyboard. I originally put LeoBog Greywood V3 switches in it<br>
+				Eventually, I ended up putting Gateron Oil Kings in it<br>
+				<br>
+				Then, I got my first ergo keyboard. The Corne
+			</p>
+			<img class="corne" src="https://user-images.githubusercontent.com/736191/47172655-0d0e9b80-d347-11e8-8a11-ccce9bf8d2b4.JPG" height="360px">
+			<p class="keyboard_desc">
+				The corne is my 2nd favorite keyboard that I own<br>
+				It's a really nice, small ergo keyboard<br>
+				<br>
+				Originally, I had Gateron Oil Kings in it, but I switched them for Kailh Box Jades<br>
+				<br>
+				After that, I got my favorite keyboard that I own<br>
+			<br>
+				The Kinesis Advantage 360
+			</p>
+			<img class="kinesis" src="https://m.media-amazon.com/images/I/61OE3U1wxtL.jpg" height="360px">
+			<p class="keyboard_desc">
+				The Kinesis Advantage 360 is genuinely an incredible keyboard<br>
+				The concavity of it makes it so comfortable<br>
+				<br>
+				I really like the general layout of the keyboard as well<br>
+				<br>
+				So yeah, those are all the keyboards I own.
+			</p>
+		</div>
+	</body>
+</html>
+
+<style>
+@keyframes enter {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+* {
+	font-family: 'Courier New'; 
+	font-weight: 500;
+	line-height: 125%;
+}
+
+body {
+	background-color: #1a1825;
+}
+
+.bar ul{
+	padding: 2px;
+	margin-top: 0px;
+	list-style-type: none;
+	background-color: #2D2F40;
+	overflow: hidden;
+}
+
+.bar a {
+	font-weight: 700;
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+.bar a:hover {
+	background-color: #1A1825;
+}
+
+.bar li {
+	float: left;
+}
+
+.keyboard_header {
+	color: white;
+	font-weight: 700;
+	font-size: 80px;
+	animation: enter .5s forwards;
+	position: relative;
+}
+
+.keyboard_desc {
+	color: gray;
+	font-weight: 550;
+	font-size: 28px;
+	position: relative;
+	animation: enter .7s forwards;
+}
+
+.about {
+	margin-left: 21px;
+}
+
+.github {
+	margin-left: 21px;
+}
+
+.keyboard {
+	margin-left: 21px;
+}
+
+.imageflex {
+	display: flex;
+}
+
+.imageflexcontent {
+	margin-left: 6px;
+	margin-top: 0px;
+}
+
+.hyperx {
+	animation: enter .8s forwards;
+}
+
+.apex {
+	animation: enter .8s forwards;
+}
+
+.leobog {
+	animation: enter .8s forwards;
+}
+
+.kinesis {
+	animation: enter .8s forwards;
+}
+</style>
