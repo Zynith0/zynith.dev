@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<nav class="bar">
+			<ul>
+				<div class="imageflex">
+					<img class="home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/">Home</a></li>
+					<img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="47px">
+					<li class="imageflexcontent"><a href="https://github.com/Zynith0">Github</a></li>
+					<img class="desc" src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png" height="47px">
+					<li class="imageflexcontent"><a href="http://localhost:8080/Description">Desc</a></li>
+				</div>
+			</ul>
+		</nav>
+		</nav>
+		<div style="text-align: center;">
+			<h1 class="name" id="test">Zynith</h1>
+			<p class="short_desc">
+				Hobbyist dev
+			</p>
+			<img class="brisket" src="https://preview.redd.it/u82hlviyyv9a1.jpg?width=640&crop=smart&auto=webp&s=8d66ec7c4b5d97fe42d43c769a870035afd96608">
+			<!-- <p class="long_desc"> -->
+			<!-- 	Hello! My name is Zynith :3<br> -->
+			<!-- 	I really enjoy backend development and tinkering with things.<br> -->
+			<!-- 	My favorite programming language is go (the backend for this website is actually written in it lol)<br> -->
+			<!-- 	Some of my favorite games are Hollow Knight, Portal, and Portal 2.<br> -->
+			<!-- </p> -->
+		</div>
+	</body>
+</html>
+
+<style>
+@keyframes enter {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+* {
+	font-family: 'Courier New'; 
+	font-weight: 500;
+	line-height: 125%;
+}
+
+body {
+	background-color: #1a1825;
+}
+
+.bar ul{
+	padding: 2px;
+	margin-top: 0px;
+	list-style-type: none;
+	background-color: #2D2F40;
+	overflow: hidden;
+}
+
+.bar a {
+	font-weight: 700;
+	font-size: 25px;
+	color: white;
+	text-decoration: none;
+	padding: 10px;
+	display: block;
+	text-align: center;
+}
+
+.bar a:hover {
+	background-color: #1A1825;
+}
+
+.bar li {
+	float: left;
+}
+
+.name {
+	color: white;
+	font-weight: 700;
+	font-size: 80px;
+	animation: enter .5s forwards;
+	position: relative;
+	top: 400px;
+	right: 500px;
+}
+
+.short_desc {
+	color: gray;
+	font-weight: 700;
+	font-size: 30px;
+	animation: enter .7s forwards;
+	position: relative;
+	top: 360px;
+	right: 500px;
+}
+
+.brisket {
+	scale: 80%;
+	position: relative;
+	left: 200px;
+	top: -30px;
+	animation: enter .5s forwards;
+	border-radius: 30px;
+}
+
+.imageflex {
+	display: flex;
+}
+
+.imageflexcontent {
+	margin-left: 6px;
+	margin-top: 0px;
+}
+
+.desc {
+	margin-left: 21px;
+}
+
+.github {
+	margin-left: 21px;
+}
+
+</style>
+
+<script>
+</script>
