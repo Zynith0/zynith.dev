@@ -25,6 +25,7 @@
 			<p class="short_desc">
 				Hobbyist dev<br>
 			</p>
+			<button class="about_me_button" onclick="aboutMe();">About Me</button>
 			<img class="brisket" src="https://preview.redd.it/u82hlviyyv9a1.jpg?width=640&crop=smart&auto=webp&s=8d66ec7c4b5d97fe42d43c769a870035afd96608">
 		</div>
 	</body>
@@ -46,6 +47,7 @@
 	font-family: 'Courier New'; 
 	font-weight: 500;
 	line-height: 125%;
+	color: #DEDDF4;
 }
 
 body {
@@ -98,6 +100,28 @@ body {
 	right: 500px;
 }
 
+.about_me_button {
+	text-align: none;
+	background-color: #22212E;
+	font-weight: 700;
+	font-size: 30px;
+	animation: enter .9s;
+	position: relative;
+	top: -130px;
+	right: 178px;
+	border-radius: 9999px;
+	border: solid 3px #22212E;
+	scale: 75%;
+	padding: 20px;
+	transition: color .2s, background-color .2s, border .2s;
+}
+
+.about_me_button:hover {
+	cursor: pointer;
+	background-color: #2B2839;
+	border: solid 3px #2B2839;
+}
+
 .brisket {
 	scale: 80%;
 	position: relative;
@@ -134,4 +158,7 @@ body {
 </style>
 
 <script>
+function aboutMe() {
+	window.open("http://localhost:8080/AboutMe", "_self");
+}
 </script>
