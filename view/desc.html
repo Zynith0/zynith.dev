@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Zynith</title>
+		<link rel="icon" type="image/x-icon" href="https://rosepinetheme.com/assets/logo-main.png">
 	</head>
 	<body>
-		<nav class="bar">
+		<nav class="bar" style="opacity: 0; animation: short_enter .5s forwards; animation-delay: .5s;">
 			<ul>
-				<div class="imageflex">
-					<img class="home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/">Home</a></li>
-					<img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="47px">
-					<li class="imageflexcontent"><a href="https://github.com/Zynith0">Github</a></li>
-					<img class="about" src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/AboutMe">About Me</a></li>
-					<img class="keyboard" src="https://cdn3.iconfinder.com/data/icons/computers-programming/512/Keyboard_A-512.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/Keyboards">Keyboards</a></li>
-					<!-- <img class="yt" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/black-and-white-youtube-icon.png" height="47px"> -->
-					<!-- <li class="imageflexcontent"><a href="http://localhost:8080/yt-mp3">Yt Downloader</a></li> -->
+				<div class="imageflex" style="align-items: center;">
+					<img src="https://rosepinetheme.com/assets/logo-main.png" height="70px" class="rose-pine" onclick="window.open('http://localhost:8080/', '_self');"> 
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/" style="padding: 10px;">Home</a></li>
+					<li class="imageflexcontent"><a href="https://github.com/Zynith0" style="padding: 10px;">Github</a></li>
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/AboutMe" style="padding: 10px;">About Me</a></li>
+					<!-- <li class="imageflexcontent"><a href="http://192.168.0.141:8080/Keyboards" style="padding: 10px;">Keyboards</a></li> -->
+					<!-- <li class="imageflexcontent"><a href="http://192.168.0.141:8080/Pomodoro" style="padding: 10px;">Pomodoro Timer</a></li> -->
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/yt-mp3" style="padding: 10px;">Yt Downloader</a></li>
 				</div>
 			</ul>
 		</nav>
@@ -25,15 +24,19 @@
 			</h1>
 			<p class="about_desc">
 				Hello :3! My name is Zynith.<br>
-				I'm a transfem (she/her) from Canada, and I really enjoy backend development (as well as a bit of frontend) and tinkering around with things.<br>
-				<br>
-				<br>
+				I'm a transfem (she/her) from Canada, and I really enjoy backend development<br>
+				(as well as a bit of frontend)<br>
+				and tinkering around with things.<br>
+			</p>
+			<p class="about_desc2">
 				I use arch (btw) and neovim (btw) and hyprland (btw) and dvorak (btw)<br>
 				My favorite music genre is thrash metal, and some of my favorite songs (in general) are<br>
-				Holy Wars - Megadeth, Lucretia - Megadeth, Screaming Suicide - Metallica, and<br>
-				Geoff Castellucci's cover of Ring Of Fire<br>
-				<br>
-				I really like watching theprimeagen, and my entire config is pretty much based around his
+				Holy Wars - Megadeth, Lucretia - Megadeth,<br> Screaming Suicide - Metallica, and Geoff Castellucci's cover of Ring Of Fire.<br>
+			</p>
+			<p class="about_desc3">
+				nvm lol I actually really got into Poor Man's Poison recently,<br>
+				and I would say they're my favorite band.<br>
+				My favorite song by them is Feed the Machine.<br>
 			</p>
 		</div>
 	</body>
@@ -51,47 +54,80 @@
 	}
 }
 
+@keyframes short_enter {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 * {
-	font-family: 'Courier New'; 
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 500;
 	line-height: 125%;
+	color: #DEDDF4;
 }
 
 body {
 	background-color: #1a1825;
+	margin: 0px;
+}
+
+.bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .bar ul{
-	padding: 2px;
+	padding: 4px;
 	margin-top: 0px;
-	list-style-type: none;
+	list-style: none;
 	background-color: #2D2F40;
 	overflow: hidden;
+	border: solid #2D2F40;
+	border-radius: 9999px;
 }
 
 .bar a {
+	border-radius: 9999px;
+	border: solid #2D2F40;
+	transition: background-color .2s, border .2s, scale .2s;
 	font-weight: 700;
 	font-size: 25px;
 	color: white;
 	text-decoration: none;
-	padding: 10px;
+	margin-right: 50px;
 	display: block;
 	text-align: center;
+	list-style: none;
 }
 
 .bar a:hover {
-	background-color: #1A1825;
+	background-color: #2B2839;
+	border: solid 3px #2B2839;
+}
+
+.bar a:active {
+	border: solid 3px #5F7783;
+	scale: 0.95;
 }
 
 .bar li {
-	float: left;
+	display: inline-block;
 }
 
 .about_header {
 	color: white;
 	font-weight: 700;
 	font-size: 80px;
-	animation: enter .5s forwards;
+	opacity: 0;
+	animation: short_enter .5s forwards;
+	animation-delay: .2s;
 	position: relative;
 }
 
@@ -100,7 +136,29 @@ body {
 	font-weight: 550;
 	font-size: 28px;
 	position: relative;
-	animation: enter .7s forwards;
+	opacity: 0;
+	animation: short_enter .7s forwards;
+	animation-delay: .4s;
+}
+
+.about_desc2 {
+	color: #DEDDF4;
+	font-weight: 550;
+	font-size: 28px;
+	position: relative;
+	opacity: 0;
+	animation: short_enter .7s forwards;
+	animation-delay: .6s;
+}
+
+.about_desc3 {
+	color: #DEDDF4;
+	font-weight: 550;
+	font-size: 28px;
+	position: relative;
+	opacity: 0;
+	animation: short_enter .7s forwards;
+	animation-delay: .9s;
 }
 
 .about {
@@ -117,6 +175,19 @@ body {
 
 .yt {
 	margin-left: 21px;
+}
+
+.rose-pine {
+	padding-right: 50px;
+	transition: transform .1s;
+}
+
+.rose-pine:hover {
+	cursor: pointer;
+}
+
+.rose-pine:active {
+	transform: scale(0.95);
 }
 
 .imageflex {

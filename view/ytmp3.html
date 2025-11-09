@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Zynith</title>
+		<link rel="icon" type="image/x-icon" href="https://rosepinetheme.com/assets/logo-main.png">
 	</head>
 	<body>
-		<nav class="bar">
+		<nav class="bar" style="opacity: 0; animation: short_enter .5s forwards; animation-delay: .5s;">
 			<ul>
-				<div class="imageflex">
-					<img class="home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/">Home</a></li>
-					<img class="github" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" height="47px">
-					<li class="imageflexcontent"><a href="https://github.com/Zynith0">Github</a></li>
-					<img class="about" src="https://www.iconpacks.net/icons/2/free-opened-book-icon-3163-thumb.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/AboutMe">About Me</a></li>
-					<img class="keyboard" src="https://cdn3.iconfinder.com/data/icons/computers-programming/512/Keyboard_A-512.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/Keyboards">Keyboards</a></li>
-					<img class="yt" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/black-and-white-youtube-icon.png" height="47px">
-					<li class="imageflexcontent"><a href="http://localhost:8080/yt-mp3">Yt Downloader</a></li>
+				<div class="imageflex" style="align-items: center;">
+					<img src="https://rosepinetheme.com/assets/logo-main.png" height="70px" class="rose-pine" onclick="window.open('http://localhost:8080/', '_self');"> 
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/" style="padding: 10px;">Home</a></li>
+					<li class="imageflexcontent"><a href="https://github.com/Zynith0" style="padding: 10px;">Github</a></li>
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/AboutMe" style="padding: 10px;">About Me</a></li>
+					<!-- <li class="imageflexcontent"><a href="http://192.168.0.141:8080/Keyboards" style="padding: 10px;">Keyboards</a></li> -->
+					<!-- <li class="imageflexcontent"><a href="http://192.168.0.141:8080/Pomodoro" style="padding: 10px;">Pomodoro Timer</a></li> -->
+					<li class="imageflexcontent"><a href="http://192.168.0.141:8080/yt-mp3" style="padding: 10px;">Yt Downloader</a></li>
 				</div>
 			</ul>
 		</nav>
@@ -35,12 +34,13 @@
 				</select>
 			</div>
 			<button onclick="getInputValue();" class="download" id="download">download</button>
+			<p class="note">Note: this may not work due to youtube being fucking stupid</p>
 		</div>
 <html>
 
 <style>
 * {
-	font-family: 'Courier New'; 
+	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 500;
 	line-height: 125%;
 	color: #DEDDF4;
@@ -51,48 +51,55 @@ body {
 }
 
 .yt_header {
-	animation: enter 0.5s forwards;
+	opacity: 0;
+	animation: short_enter 0.5s forwards;
+	animation-delay: 0.3s;
 }
 
 .download {
-	color: white;
-	background-color: transparent;
-	border: solid #2D2F40;
-	border-radius: 8px;
+	background-color: #22212E;
+	border: solid #22212E;
+	border-radius: 9999px;
 	position: relative;
-	left: 203px;
+	transition: ease-in-out all 100ms;
+	opacity: 0;
+	animation: short_enter 0.5s forwards;
+	animation-delay: 0.6s;
+	left: 209px;
 	top: 459px;
-	transition: ease-in-out background-color 100ms;
-	animation: enter 0.7s forwards;
 }
 
 .download:hover {
-	background-color: #31748F;
+	background-color: #2B2839;
+	border-color: #2B2839;
+	cursor: pointer;
 }
 
 .download:active {
-	color: black;
-	background-color: white;
+	border-color: #5B737E;
 }
 
 .audio-format {
-	color: white;
-	background-color: transparent;
-	border: solid #2D2F40;
-	border-radius: 8px;
-	color: white;
+	background-color: #22212E;
+	border: solid #22212E;
+	border-radius: 9999px;
 	position: relative;
+	transition: ease-in-out all 100ms;
+	opacity: 0;
+	animation: short_enter 0.5s forwards;
+	animation-delay: 0.6s;
 	left: -220px;
 	top: 485px;
-	animation: enter 0.7s forwards;
 }
 
 .audio-format:hover {
-	background-color: #31748F;
+	background-color: #2B2839;
+	border-color: #2B2839;
+	cursor: pointer;
 }
 
 .audio-format:active {
-	color: black;
+	border-color: #5B737E;
 }
 
 .url {
@@ -103,13 +110,29 @@ body {
 	width: 480px;
 	position: relative;
 	top: 480px;
-	animation: enter 0.6s forwards;
+	opacity: 0;
+	animation: short_enter 0.5s forwards;
+	animation-delay: 0.5s;
 }
 
 .img {
 	position: relative;
 	top: 480px;
-	animation: enter 0.5s forwards;
+	opacity: 0;
+	animation: short_enter 0.5s forwards;
+	animation-delay: 0.9s;
+}
+
+.note {
+	color: #918DAA;
+	font-weight: 700;
+	font-size: 12px;
+	opacity: 0;
+	animation: short_enter .7s forwards;
+	animation-delay: 1.7s;
+	position: relative;
+	top: 500px;
+	/* right: 500px; */
 }
 </style>
 
@@ -131,7 +154,7 @@ async function callMakeFile(url, format) {
 		Format: format,
 	};
 	try {
-		const response = await fetch("http://localhost:8080/startDownload", {
+		const response = await fetch("http://192.168.0.141:8080/startDownload", {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
@@ -144,7 +167,7 @@ async function callMakeFile(url, format) {
 		// const blob = await response.blob();
 		// const jsonString = await blob.text();
 		// jsonObject = JSON.parse(jsonString)
-		window.open("http://localhost:8080/download");
+		window.open("http://192.168.0.141:8080/test");
 	} catch (error) {
 		console.error("Error fetching or processing blob: ", error);
 	}
@@ -164,40 +187,69 @@ async function callMakeFile(url, format) {
 	}
 }
 
+@keyframes short_enter {
+	0% {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: none;
+	}
+}
+
 * {
-	font-family: 'Courier New'; 
 	font-weight: 500;
 	line-height: 125%;
 }
 
 body {
 	background-color: #1a1825;
+	margin: 0px;
+}
+
+.bar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .bar ul{
-	padding: 2px;
+	padding: 4px;
 	margin-top: 0px;
-	list-style-type: none;
+	list-style: none;
 	background-color: #2D2F40;
 	overflow: hidden;
+	border: solid #2D2F40;
+	border-radius: 9999px;
 }
 
 .bar a {
+	border-radius: 9999px;
+	border: solid #2D2F40;
+	transition: background-color .2s, border .2s, scale .2s;
 	font-weight: 700;
 	font-size: 25px;
 	color: white;
 	text-decoration: none;
-	padding: 10px;
+	margin-right: 50px;
 	display: block;
 	text-align: center;
+	list-style: none;
 }
 
 .bar a:hover {
-	background-color: #1A1825;
+	background-color: #2B2839;
+	border: solid 3px #2B2839;
+}
+
+.bar a:active {
+	border: solid 3px #5F7783;
+	scale: 0.95;
 }
 
 .bar li {
-	float: left;
+	display: inline-block;
 }
 
 .imageflex {
@@ -223,6 +275,19 @@ body {
 
 .yt {
 	margin-left: 21px;
+}
+
+.rose-pine {
+	padding-right: 50px;
+	transition: transform .1s;
+}
+
+.rose-pine:hover {
+	cursor: pointer;
+}
+
+.rose-pine:active {
+	transform: scale(0.95);
 }
 </style>
 

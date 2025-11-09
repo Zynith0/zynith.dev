@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-
 	"github.com/Zynith0/personal_website/internal/handler"
 )
 
@@ -12,11 +11,11 @@ func main() {
 
 	mux.HandleFunc("/", handler.HandleRoot)
 	mux.HandleFunc("/AboutMe", handler.HandleDesc)
-	mux.HandleFunc("/Keyboards", handler.HandleKeyboards)
+	// mux.HandleFunc("/Pomodoro", handler.HandlePomodoro)
 	mux.HandleFunc("/yt-mp3", handler.HandleYt)
 	mux.HandleFunc("POST /startDownload", handler.HandleDownload)
-	mux.HandleFunc("/download", handler.HandleTest)
+	mux.HandleFunc("/test", handler.HandleTest)
 
-	fmt.Println("Server listening on :8080")
+	fmt.Printf("Server listening on :8080\n")
 	http.ListenAndServe(":8080", mux)
 }
