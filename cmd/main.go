@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+
 	"github.com/Zynith0/personal_website/internal/handler"
 )
 
