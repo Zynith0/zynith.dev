@@ -14,7 +14,7 @@ import (
 var folderName string
 
 type Url struct {
-	Url string
+	Url    string
 	Format string
 }
 
@@ -50,7 +50,6 @@ func renderTemplate(tmpl string, w http.ResponseWriter) {
 	t.Execute(w, "")
 }
 
-
 func HandleDownload(w http.ResponseWriter, r *http.Request) {
 	requestData := Url{}
 	err := json.NewDecoder(r.Body).Decode(&requestData)
@@ -65,14 +64,14 @@ func HandleDownload(w http.ResponseWriter, r *http.Request) {
 
 	folderName = strconv.Itoa(num1) + strconv.Itoa(num2) + strconv.Itoa(num3) + strconv.Itoa(num4)
 
-	os.Mkdir("/home/zynith/personal/go/personal_website/Videos/" + folderName, 0755)
+	os.Mkdir("/home/zynith/personal/go/personal_website/Videos/"+folderName, 0755)
 
 	cmd := exec.Command("yt-dlp", "-t", requestData.Format, requestData.Url)
 	if requestData.Format == "wav" {
 
-type Name struct {
-	Name string
-}
+		type Name struct {
+			Name string
+		}
 		cmd = exec.Command("yt-dlp", "-x", "--audio-format", "wav", requestData.Url)
 	}
 	cmd.Dir = "/home/zynith/personal/go/personal_website/Videos/" + folderName
@@ -91,8 +90,8 @@ type Name struct {
 	fmt.Println(string(output2))
 }
 
-func HandleTest(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/zip") 
+func HandleUserDownload(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/zip")
 	w.Header().Set("Content-Disposition", "attachment; filename=\"Videos.zip\"")
-	http.ServeFile(w, r, "/home/zynith/personal/go/personal_website/Videos/" + folderName + ".zip")
+	http.ServeFile(w, r, "/home/zynith/personal/go/personal_website/Videos/"+folderName+".zip")
 }

@@ -15,7 +15,7 @@ func main() {
 	// mux.HandleFunc("/Pomodoro", handler.HandlePomodoro)
 	mux.HandleFunc("/yt-mp3", handler.HandleYt)
 	mux.HandleFunc("POST /startDownload", handler.HandleDownload)
-	mux.HandleFunc("/test", handler.HandleTest)
+	mux.HandleFunc("/download", handler.HandleUserDownload)
 
 	fmt.Printf("Server listening on :8080\n")
 	http.ListenAndServe(":8080", mux)
