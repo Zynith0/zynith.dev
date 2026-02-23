@@ -1,0 +1,70 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<nav class="navbar">
+  <a href="/" class="logo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2L6 8H9L5 12L9 14V22H15V14L19 12L15 8H18L12 2Z" fill="#83c092" stroke="#83c092" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <a href="/" class:list={["nav-link", { active: currentPath === "/" }]}>Home</a>
+    <a href="/about" class:list={["nav-link", { active: currentPath === "/about" }]}>About</a>
+    <a href="/projects" class:list={["nav-link", { active: currentPath === "/projects" }]}>Projects</a>
+  </div>
+</nav>
+
+<style>
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: #2d353b;
+    border-bottom: 2px solid #4f585e;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: absolute;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+
+  .logo:hover {
+    transform: scale(1.1);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-link {
+    color: #d3c6aa;
+    text-decoration: none;
+    font-family: "Cutive Mono", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #83c092;
+  }
+
+  .nav-link.active {
+    border-color: #83c092;
+    color: #83c092;
+  }
+</style>

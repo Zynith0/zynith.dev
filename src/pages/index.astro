@@ -1,127 +1,72 @@
 ---
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Zynith</title>
-	</head>
-	<body>
-		<h1 id="greeting">Hello!</h1>
-		<div id="main-content">
-			<img alt="an upclose of kasane teto's face" src="https://i.pinimg.com/736x/d0/56/55/d056558849322f6088c31784cd58fe9f.jpg" id="teto" />
-			<p class="text" id="desc">My name is <span style="color: #83c092;">Zynith.</span><br>
-			I am a transfem (mainly) backend dev<br>
-			</p>
-			<button id="more-about-me" class="main-button" onclick="window.open('/about', '_self')">More about me</button>
-			<button class="main-button" onclick="window.open('/projects', '_self')">Projects</button>
-		</div>
-	</body>
-</html>
+<Layout title="Zynith">
+  <main>
+    <h1 id="greeting">Hello!</h1>
+    <div id="main-content">
+      <img alt="an upclose of kasane teto's face" src="https://i.pinimg.com/736x/d0/56/55/d056558849322f6088c31784cd58fe9f.jpg" id="teto" />
+      <p class="text" id="desc">My name is <span style="color: #83c092;">Zynith.</span><br>
+      I am a transfem (mainly) backend dev<br>
+      </p>
+      <button id="more-about-me" class="main-button" onclick="window.open('/about', '_self')">More about me</button>
+      <button class="main-button" onclick="window.open('/projects', '_self')">Projects</button>
+    </div>
+  </main>
+</Layout>
 
 <style>
-	* {
-		font-family: "Cutive Mono", monospace;
-		font-weight: 400;
-		font-style: normal;
-	}
+  main {
+    padding-top: 60px;
+  }
 
-	body {
-		background-color: #2d353b;
-	}
+  #main-content {
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-	@keyframes slide-in-rotate {
-		from {
-			transform: translateY(100%) rotate(30deg);
-			opacity: 0
-		}
-		80% {
-			transform: translateY(-2%) rotate(-2deg);
-			opacity: 1
-		}
-		to {
-			transform: translateY(0%);
-			opacity: 1
-		}
-	}
+  #greeting {
+    color: #d3c6aa;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-	@keyframes slide-in {
-		from {
-			transform: translateY(100%);
-			opacity: 0
-		}
-		80% {
-			transform: translateY(-2%);
-			opacity: 1
-		}
-		to {
-			transform: translateY(0%);
-			opacity: 1
-		}
-	}
+  #teto {
+    width: 400px;
+    height: 400px;
+    border: 3px solid #e67e80;
+    margin-top: 20px;
+    animation: slide-in-rotate 0.6s;
+  }
 
-	#main-content {
-		margin: 0;
-		position: absolute;
-		top: 55%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
+  .main-button {
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #83c092;
+    color: #d3c6aa;
+    height: 25px;
+    transition: all 0.2s ease-in-out;
+    animation: slide-in 0.6s;
+  }
 
-	#greeting {
-		color: #d3c6aa;
-		text-align: center;
-		font-weight: bold;
-		margin: 0;
-		position: absolute;
-		top: 25%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-	}
+  .main-button:hover {
+    cursor: pointer;
+    background-color: #56635f;
+  }
 
-	#teto {
-		width: 400px;
-		height: 400px;
-		border: 3px solid #e67e80;
-		margin-top: 20px;
-		animation: slide-in-rotate 0.6s;
-	}
-
-	#colorscheme-href {
-		color: #56635f;
-	}
-
-	#references {
-		position: fixed;
-		bottom: 2px;
-		left: 2px;
-	}
-
-	.main-button {
-		outline: none;
-		background-color: #4f585e;
-		border: 2px solid #83c092;
-		background-color: transparent;
-		color: #d3c6aa;
-		height: 25px;
-		transition: all 0.2s ease-in-out;
-		animation: slide-in 0.6s;
-	}
-
-	.main-button:hover {
-		cursor: pointer;
-		background-color: #56635f;
-	}
-
-	.text {
-		color: #d3c6aa;
-		font-weight: bold;
-		font-size: 18px;
-		animation: slide-in 0.6s;
-	}
-
+  .text {
+    color: #d3c6aa;
+    font-weight: bold;
+    font-size: 18px;
+    animation: slide-in 0.6s;
+  }
 </style>
