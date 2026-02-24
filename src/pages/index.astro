@@ -3,70 +3,82 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Zynith">
-  <main>
-    <h1 id="greeting">Hello!</h1>
-    <div id="main-content">
-      <img alt="an upclose of kasane teto's face" src="https://i.pinimg.com/736x/d0/56/55/d056558849322f6088c31784cd58fe9f.jpg" id="teto" />
-      <p class="text" id="desc">My name is <span style="color: #83c092;">Zynith.</span><br>
-      I am a transfem (mainly) backend dev<br>
-      </p>
-      <button id="more-about-me" class="main-button" onclick="window.open('/about', '_self')">More about me</button>
-      <button class="main-button" onclick="window.open('/projects', '_self')">Projects</button>
-    </div>
-  </main>
+    <main>
+        <h1 id="greeting">Hello!</h1>
+        <div id="main-content">
+            <img
+                alt="an upclose of kasane teto's face"
+                src="https://i.pinimg.com/736x/d0/56/55/d056558849322f6088c31784cd58fe9f.jpg"
+                id="teto"
+            />
+            <p class="text" id="desc">
+                My name is <span style="color: #83c092;">Zynith.</span><br />
+                I am a transfem (mainly) backend dev<br />
+            </p>
+            <button
+                id="more-about-me"
+                class="main-button"
+                onclick="window.open('/about', '_self')">More about me</button
+            >
+            <button
+                class="main-button"
+                onclick="window.open('/projects', '_self')">Projects</button
+            >
+        </div>
+    </main>
 </Layout>
 
 <style>
-  main {
-    padding-top: 60px;
-  }
+    main {
+        padding-top: 60px;
+    }
 
-  #main-content {
-    margin: 0;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    #main-content {
+        margin: 0;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-  #greeting {
-    color: #d3c6aa;
-    text-align: center;
-    font-weight: bold;
-    margin: 0;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    #greeting {
+        color: #d3c6aa;
+        text-align: center;
+        font-weight: bold;
+        margin: 0;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-  #teto {
-    width: 400px;
-    height: 400px;
-    border: 3px solid #e67e80;
-    margin-top: 20px;
-    animation: slide-in-rotate 0.6s;
-  }
+    #teto {
+        width: 400px;
+        height: 400px;
+        border: 3px solid #e67e80;
+        margin-top: 20px;
+        animation: slide-in-rotate 0.6s;
+    }
 
-  .main-button {
-    outline: none;
-    background-color: transparent;
-    border: 2px solid #83c092;
-    color: #d3c6aa;
-    height: 25px;
-    transition: all 0.2s ease-in-out;
-    animation: slide-in 0.6s;
-  }
+    .main-button {
+        outline: none;
+        background-color: transparent;
+        border: 2px solid #83c092;
+        color: #d3c6aa;
+        height: 25px;
+        transition: all 0.2s ease-in-out;
+        animation: slide-in 0.6s;
+    }
 
-  .main-button:hover {
-    cursor: pointer;
-    background-color: #56635f;
-  }
+    .main-button:hover {
+        cursor: pointer;
+        background-color: #56635f;
+    }
 
-  .text {
-    color: #d3c6aa;
-    font-weight: bold;
-    font-size: 18px;
-    animation: slide-in 0.6s;
-  }
+    .text {
+        color: #d3c6aa;
+        font-weight: bold;
+        font-size: 18px;
+        animation: slide-in 0.6s;
+    }
 </style>
