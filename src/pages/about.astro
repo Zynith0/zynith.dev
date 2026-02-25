@@ -4,12 +4,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Zynith - About">
   <main>
-    <img alt="stu mackenzie holding his signature 'flying microtonal banana' guitar" id="kgatlw" class="top-image" src="https://cdn.prod.website-files.com/6646ddea6f7841c79d11cc0e/6646ddea6f7841c79d11ce39_live-syd-p-800.jpeg" />
-    <!-- <img alt="a stupid looking bird on the windows xp background with text saying 'wawa'" id="wawa" class="top-image" src="https://cdn.discordapp.com/attachments/922475805832015912/1465156683457232937/image.png?ex=697cb23e&is=697b60be&hm=4299af929558ad4e58e3380989bea7e93f8b3e10bfb25725f01e7dba64bf73ea&" /> -->
-    <!-- <img alt="niko from oneshot crying" id="niko" class="top-image" src="https://cdn.discordapp.com/attachments/922475805832015912/1465157959662174240/reactionimage11.webp?ex=697cb36e&is=697b61ee&hm=6919eaec7811bd65c3958b6770a5c969e04f27b55fa46163313dc1ca75ed39a7&" /> -->
-    <!-- <img alt="a stupid low resolution cat laughing" id="niko" class="top-image" src="https://cdn.discordapp.com/attachments/922475805832015912/1465158097827004567/reactionimage14.png?ex=697cb38f&is=697b620f&hm=5854b01c2314271f250de04b766333e10a1df42e1cb5457a39e732afaec8e22c&" /> -->
-    <!-- <img alt="" id="low resolution man looking to the right" class="top-image" src="https://cdn.discordapp.com/attachments/922475805832015912/1465158152159760459/reactionimage16.png?ex=697cb39c&is=697b621c&hm=e773fa103d7ddbb79024acd46638dd313f43124aaba59792870f2d9ac3d9f438&" /> -->
-    <!-- <img alt="" id="this is definitely a cat." class="top-image" src="https://cdn.discordapp.com/attachments/922475805832015912/1465158460239904878/meme1096.png?ex=697cb3e6&is=697b6266&hm=f8661540328fffcba937218a2df2d3077384e32b697c14d194adfd06b0337a88&" /> -->
+    <img alt="stu mackenzie holding his signature 'flying microtonal banana' guitar" id="kgatlw" class="top-image" src="https://cdn.prod.website-files.com/6646ddea6f7841c79d11cc0e/6646ddea6f7841c79d11ce39_live-syd-p-800.jpeg" loading="lazy" />
     <div id="main-content">
       <p class="text">
       wsg. so I'm just gonna tell you more about me.<br>
@@ -58,7 +53,7 @@ import Layout from "../layouts/Layout.astro";
 
   .top-image {
     position: relative;
-    width: 16%;
+    width: 200px;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -69,6 +64,9 @@ import Layout from "../layouts/Layout.astro";
     margin: 0;
     position: relative;
     text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .text {
@@ -76,9 +74,29 @@ import Layout from "../layouts/Layout.astro";
     font-weight: bold;
     font-size: 18px;
     animation: slide-in 0.6s;
+    line-height: 1.6;
   }
 
   a {
     color: #56635f;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      padding-top: 40px;
+    }
+
+    .top-image {
+      width: 140px;
+    }
+
+    .text {
+      font-size: 16px;
+      text-align: left;
+    }
+
+    #main-content {
+      padding: 0 16px;
+    }
   }
 </style>
